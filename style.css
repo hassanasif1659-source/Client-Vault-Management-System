@@ -1,0 +1,26 @@
+label{
+    display:block;
+}
+input{
+    display: block;
+    margin: 8px auto 16px;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #631717;
+    margin:0 ;
+}
+.login-container{
+    background-color: rgb(125, 228, 125);
+    width:400px;
+    padding:30px;
+    border:1px solid rgb(255, 219, 219);
+    border-radius: 12px ;
+    text-align: center;
+}
+button{
+    background-color: #9fb5e4;
+}
