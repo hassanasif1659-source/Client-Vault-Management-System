@@ -10,11 +10,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #631717;
+    background: #0d0d17 ;
     margin:0 ;
 }
 .login-container{
-    background-color: rgb(125, 228, 125);
+   background: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
     width:400px;
     padding:30px;
     border:1px solid rgb(255, 219, 219);
@@ -22,5 +22,6 @@ body {
     text-align: center;
 }
 button{
-    background-color: #9fb5e4;
+    background-color: rgb(239, 237, 237);
+    border-radius: 3px;
 }
