@@ -10,19 +10,21 @@
      <div class="login-container">
         <h1>Client Vault Form</h1>
         <h2><strong>Smart Client Data Management System</strong></h2>
-
-        <form>
+        
+        <form id="loginForm">
             <label for="Username">Username or Email</label>
             <input type="text" id="Username" name="Username">
-
+            
             <label for="Password">Password</label>
             <input type="password" id="Password" name="Password">
-
+            <p id="errorMessage" style="color: red;"></p>
+            
             <button type="submit">Login</button>
             <br>
             
             <a href="#">Forgot Password</a>
         </form>
     </div>
+    <script src="login.js"></script>
 </body>
 </html>
