@@ -10,11 +10,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #0d0d17 ;
+    background: #12123a ;
     margin:0 ;
 }
 .login-container{
-   background: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+   background: linear-gradient(19deg, #64e2fe 0%, #b347e5 100%);
     width:400px;
     padding:30px;
     border:1px solid rgb(255, 219, 219);
