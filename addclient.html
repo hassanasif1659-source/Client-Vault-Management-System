@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClientVault - Add Client</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="page" id="page">
+        <div class="form-layout">
+
+            <!-- Form -->
+            <form class="panel" id="addForm">
+                <div class="panel-head"><h3>New Client Details</h3></div>
+                <div class="form-grid">
+                    <div class="field"><label>Client ID</label><input id="addId" placeholder="CL-0201"></div>
+                    <div class="field"><label>Full Name</label><input id="addName" placeholder="e.g. Ali Khan"></div>
+                    <div class="field"><label>Phone</label><input id="addPhone" placeholder="0300-0000000"></div>
+                    <div class="field"><label>Email</label><input id="addEmail" type="email" placeholder="name@example.com"></div>
+                    <div class="field full"><label>Address</label><input id="addAddress" placeholder="House, Street, City"></div>
+                    <div class="field"><label>Registration Date</label><input id="addDate" type="date"></div>
+                    <div class="field"><label>Client Type</label>
+                        <select id="addType"><option>Individual</option><option>Business</option><option>Corporate</option><option>Freelancer</option></select></div>
+                    <div class="field"><label>Status</label>
+                        <select id="addStatus"><option>Active</option><option>Inactive</option><option>Pending</option></select></div>
+                </div>
+                <p class="error-text" id="addError"></p>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-gold">Save Client</button>
+                    <a href="clients.html" class="btn btn-ghost">Cancel</a>
+                </div>
+            </form>
+
+            <!-- Help box -->
+            <div class="panel">
+                <div class="panel-head"><h3>Before you save</h3></div>
+                <ul class="tips">
+                    <li>Client ID is filled in for you with the next free number.</li>
+                    <li>Use the format <b>CL-0000</b> for every Client ID.</li>
+                    <li>Write the city at the end of the address, e.g. <i>House 5, Gulshan, Karachi</i>.</li>
+                    <li>The client is saved straight into the MySQL database.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="addclient.js"></script>
+</body>
+</html>

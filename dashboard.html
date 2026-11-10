@@ -1,71 +1,84 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Client Vault - Add Client</title>
-    <link rel="stylesheet" href="Clients.css">
-    <style>
-        form { max-width: 500px; }
-        label { display: block; margin-bottom: 6px; }
-        form input, form select { width: 100%; box-sizing: border-box; }
-        button { background: #4fd1c5; color: #0b1418; font-weight: bold;
-                 padding: 12px 25px; border: none; border-radius: 8px; cursor: pointer; }
-        select { padding: 10px; margin-bottom: 20px; border: 1px solid #4fd1c5;
-                 border-radius: 8px; background: #0b1418; color: #e6f1f5; }
-    </style>
+    <title>ClientVault - Dashboard</title>
+    <link rel="stylesheet" href="app.css">
 </head>
 <body>
-    <nav class="navbar">
-        <h2 class="logo">Client Vault</h2>
-        <ul>
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="addclient.html">+ Add Client</a></li>
-            <li><a href="clients.html">Clients List</a></li>
-            <li><a href="index.html">Logout</a></li>
-        </ul>
-    </nav>
+    <div class="page" id="page">
 
-    <div class="list-container">
-        <h1>Add New Client</h1>
-        <form>
-            <label>Client ID</label>
-            <input type="text" placeholder="CL-0201">
+        <!-- Welcome banner -->
+        <section class="hero">
+            <div>
+                <h2>Welcome, <span id="welcomeName">Mr. Hassan Asif</span></h2>
+                <p>Here is today's overview of all clients in the bank.</p>
+            </div>
+            <a href="addclient.html" class="btn btn-gold">+ Add New Client</a>
+        </section>
 
-            <label>Full Name</label>
-            <input type="text">
+        <!-- 4 number cards (click to see that list) -->
+        <section class="stats">
+            <a class="stat total" href="clients.html">
+                <div class="stat-icon" data-icon="users"></div>
+                <div><div class="stat-label">Total Clients</div><div class="stat-value" id="total">0</div><div class="stat-sub">All records</div></div>
+            </a>
+            <a class="stat active" href="clients.html?status=Active">
+                <div class="stat-icon" data-icon="check"></div>
+                <div><div class="stat-label">Active</div><div class="stat-value" id="active">0</div><div class="stat-sub" id="activePct">0%</div></div>
+            </a>
+            <a class="stat inactive" href="clients.html?status=Inactive">
+                <div class="stat-icon" data-icon="pause"></div>
+                <div><div class="stat-label">Inactive</div><div class="stat-value" id="inactive">0</div><div class="stat-sub" id="inactivePct">0%</div></div>
+            </a>
+            <a class="stat pending" href="clients.html?status=Pending">
+                <div class="stat-icon" data-icon="clock"></div>
+                <div><div class="stat-label">Pending</div><div class="stat-value" id="pending">0</div><div class="stat-sub" id="pendingPct">0%</div></div>
+            </a>
+        </section>
 
-            <label>Phone</label>
-            <input type="text">
+        <!-- Charts -->
+        <section class="grid-2">
+            <div class="panel">
+                <div class="panel-head"><h3>Clients by Status</h3></div>
+                <div class="donut-wrap">
+                    <div class="donut" id="donut">
+                        <div class="donut-center"><div><b id="donutTotal">0</b><span>Clients</span></div></div>
+                    </div>
+                    <div class="legend">
+                        <div><i class="dot" style="background:var(--active)"></i>Active <b id="lgActive">0</b></div>
+                        <div><i class="dot" style="background:var(--inactive)"></i>Inactive <b id="lgInactive">0</b></div>
+                        <div><i class="dot" style="background:var(--pending)"></i>Pending <b id="lgPending">0</b></div>
+                    </div>
+                </div>
+            </div>
 
-            <label>Email</label>
-            <input type="email">
+            <div class="panel">
+                <div class="panel-head"><h3>Clients by Type</h3></div>
+                <div class="bars" id="typeBars"></div>
+            </div>
+        </section>
 
-            <label>Address</label>
-            <input type="text">
+        <section class="grid-2">
+            <div class="panel">
+                <div class="panel-head"><h3>Top Cities</h3></div>
+                <div class="bars" id="cityBars"></div>
+            </div>
 
-            <label>Registration Date</label>
-            <input type="date">
-
-            <label>Client Type</label>
-            <select>
-                <option>Individual</option>
-                <option>Business</option>
-                <option>Corporate</option>
-                <option>Freelancer</option>
-            </select>
-
-            <label>Status</label>
-            <select>
-                <option>Active</option>
-                <option>Inactive</option>
-                <option>Pending</option>
-            </select>
-
-            <button type="submit">Save Client</button>
-        </form>
+            <div class="panel">
+                <div class="panel-head"><h3>Newest Clients</h3><a href="clients.html">View all &rarr;</a></div>
+                <div class="table-scroll">
+                    <table>
+                        <thead><tr><th>Client</th><th>Registered</th><th>Status</th></tr></thead>
+                        <tbody id="recentRows"><tr><td colspan="3" class="empty">Loading...</td></tr></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
     </div>
+
+    <script src="app.js"></script>
+    <script src="dashboard.js"></script>
 </body>
 </html>

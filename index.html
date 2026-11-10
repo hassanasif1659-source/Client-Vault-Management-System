@@ -3,28 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Client Vault Management System</title>
-    <link rel="stylesheet" href="style.css">
+    <title>ClientVault - Login</title>
+    <link rel="stylesheet" href="app.css">
 </head>
 <body>
-     <div class="login-container">
-        <h1>Client Vault Form</h1>
-        <h2><strong>Smart Client Data Management System</strong></h2>
-        
-        <form id="loginForm">
-            <label for="Username">Username or Email</label>
-            <input type="text" id="Username" name="Username" placeholder="Username or Email">
-            
-            <label for="Password">Password</label>
-            <input type="password" id="Password" name="Password" placeholder="Password">
-            <p id="errorMessage" style="color: red;"></p>
-            
-            <button type="submit">Login</button>
-            <br>
-            
-            <a href="#">Forgot Password</a>
-        </form>
+    <div class="login-page">
+
+        <!-- Left side: welcome text -->
+        <section class="login-side">
+            <div class="brand">
+                <div class="brand-logo">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18M5 10v8M9 10v8M15 10v8M19 10v8M2 21h20M12 2l9 5H3z"/></svg>
+                </div>
+                <div>
+                    <div class="brand-name">Client<span>Vault</span></div>
+                    <div class="brand-tag">Bank Client Manager</div>
+                </div>
+            </div>
+
+            <div>
+                <h1>Every client record,<br><span>safe in one vault.</span></h1>
+                <p>Search any client by ID in seconds, track who is Active, Inactive or Pending,
+                   and add, update or remove records from one dashboard.</p>
+            </div>
+
+            <div class="login-features">
+                <div>200+ client records</div>
+                <div>MySQL database</div>
+                <div>Instant ID search</div>
+            </div>
+        </section>
+
+        <!-- Right side: login form -->
+        <section class="login-box-wrap">
+            <form class="login-box" id="loginForm">
+                <h2>Welcome back</h2>
+                <p class="sub">Sign in to manage your clients</p>
+
+                <div class="field">
+                    <label for="Username">Username or Email</label>
+                    <input type="text" id="Username" placeholder="Enter your username">
+                </div>
+
+                <div class="field">
+                    <label for="Password">Password</label>
+                    <input type="password" id="Password" placeholder="Enter your password">
+                </div>
+
+                <p class="error-text" id="errorMessage"></p>
+
+                <button type="submit" class="btn btn-gold btn-block">Login</button>
+            </form>
+        </section>
     </div>
+
     <script src="login.js"></script>
 </body>
 </html>
