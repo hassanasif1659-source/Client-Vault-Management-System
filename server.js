@@ -6,19 +6,22 @@ const app = express();
 app.use(express.json()); // read data sent from the website forms
 
 // 1. Connect to MySQL (XAMPP: password is empty)
-const db = mysql.createConnection({
+//    A "pool" reconnects by itself, so the server never stops if MySQL restarts.
+const db = mysql.createPool({
   host: "localhost",
   user: "root",
   password: "",
   database: "clientvault",
-  dateStrings: true
+  dateStrings: true,
+  connectionLimit: 5
 });
 
-db.connect(function (err) {
+db.query("SELECT COUNT(*) AS total FROM clients", function (err, rows) {
   if (err) {
     console.log("MySQL connection failed:", err.message);
+    console.log("-> Start MySQL in XAMPP, then restart this server.");
   } else {
-    console.log("Connected to MySQL");
+    console.log("Connected to MySQL (" + rows[0].total + " clients)");
   }
 });
 
